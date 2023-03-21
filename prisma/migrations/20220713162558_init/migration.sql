@@ -24,6 +24,29 @@ CREATE TABLE "Note" (
     CONSTRAINT "Note_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+-- CreateTable
+CREATE TABLE "Comic" (
+    "id" TEST NOT NULL PRIMARY KEY,
+    "title" TEXT NOT NULL,
+    "description" TEXT,
+    "volume" TEXT,
+    "cover" TEXT,
+    "userId" TEXT NOT NULL,
+    CONSTRAINT "Comic_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- CreateTable
+CREATE TABLE "Issue" (
+    "id" TEST NOT NULL PRIMARY KEY,
+    "comicId" TEXT NOT NULL,
+    "issueNumber" TEXT NOT NULL,
+    "description" TEXT,
+    "cover" TEXT,
+    "userId" TEXT NOT NULL,
+    CONSTRAINT "Issue_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT "Issue_comicId_fkey" FOREIGN KEY ("comicId") REFERENCES "Comic" ("id") ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
 

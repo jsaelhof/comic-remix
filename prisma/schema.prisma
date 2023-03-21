@@ -16,6 +16,7 @@ model User {
 
   password Password?
   notes    Note[]
+  comics   Comic[]
 }
 
 model Password {
@@ -35,4 +36,26 @@ model Note {
 
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String
+}
+
+model Comic {
+  id          String @id @default(cuid())
+  title       String
+  volume      String
+  description String
+  cover       String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId      String
+  issues      Issue[]
+}
+
+model Issue {
+  id          String @id @default(cuid())
+  comic       Comic   @relation(fields: [comicId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  comicId     String
+  issueNumber String
+  description String
+  cover       String
+  user        User    @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  userId      String
 }
