@@ -46,9 +46,14 @@ const ComicIndex = () => {
               key={issueNumber}
               className={styles.issueRow}
             >
-              <div>{<img src={issueCover} alt="" />}</div>
-              <div>#{issueNumber}</div>
-              <div>{description}</div>
+              <div>
+                <img src={issueCover} alt="" />
+              </div>
+              <div className={styles.issueNumber}>
+                <span className="align-top text-xs">#</span>
+                {issueNumber}
+              </div>
+              <div className="text-xs">{description}</div>
             </Link>
           )
         )}

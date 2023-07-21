@@ -1,4 +1,5 @@
 import { Form, useMatches } from "@remix-run/react";
+import React from "react";
 
 import styles from "./app-bar.module.css";
 
@@ -17,7 +18,11 @@ const AppBar = () => {
         */}
         {matches
           .filter((match) => match.handle?.nav)
-          .map((match) => match.handle?.nav(matches))}
+          .map((match, i) => (
+            <React.Fragment key={i}>
+              {match.handle?.nav(matches)}
+            </React.Fragment>
+          ))}
       </div>
 
       <Form action="/logout" method="post">

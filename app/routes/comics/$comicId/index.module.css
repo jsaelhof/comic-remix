@@ -22,11 +22,16 @@
 .issueList {
   display: grid;
   grid-auto-flow: row;
-  row-gap: 4px;
+  row-gap: 16px;
 }
 
 .issueRow {
   display: grid;
-  grid-template-columns: 25px 50px 1fr;
+  grid-template-columns: 50px 30px 500px;
   column-gap: 8px;
+}
+
+.issueNumber {
+  text-align: right;
+  line-height: 19px;
 }
