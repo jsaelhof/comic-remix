@@ -1,3 +1,5 @@
 {
-    "greeting": "Hello"
+    "greeting": "Hello",
+    "token": "Common Token EN",
+    "icu": "{numPersons, plural, =0 {no people} =1 {one person} other {# people}}"
 }

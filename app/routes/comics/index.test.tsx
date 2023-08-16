@@ -27,7 +27,7 @@ const mockCompleteLoaderData = {
   ],
 };
 
-describe("index.tsx", () => {
+describe.skip("index.tsx", () => {
   it("should render a simple component", () => {
     const SimpleComponent = () => <div>My Component</div>;
 

@@ -2,9 +2,12 @@ import { Form, useMatches } from "@remix-run/react";
 import React from "react";
 
 import styles from "./app-bar.module.css";
+import { useTranslation } from "react-i18next";
 
 const AppBar = () => {
   const matches = useMatches();
+
+  const { t } = useTranslation("appBar");
 
   return (
     <div className={styles.appBar}>
@@ -30,7 +33,8 @@ const AppBar = () => {
           type="submit"
           className="rounded bg-slate-600 py-2 px-4 text-blue-100 hover:bg-blue-500 active:bg-blue-600"
         >
-          Logout
+          {t("appBar:token")}
+          {t("common:icu", { numPersons: 10 })}
         </button>
       </Form>
     </div>

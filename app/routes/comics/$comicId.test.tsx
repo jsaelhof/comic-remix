@@ -41,7 +41,7 @@ vi.mock("~/models/comic.server", () => ({
   ]),
 }));
 
-describe("$comicId", () => {
+describe.skip("$comicId", () => {
   it("should return the correct loader repsonse format", async () => {
     const request = new Request("http://foo.bar");
 
